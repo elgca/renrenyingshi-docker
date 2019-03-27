@@ -1,7 +1,9 @@
 #!/bin/bash
 
-wget https://appdown.rrysapp.com/rrshareweb_centos7.tar.gz
+ls . |grep -v build.sh|grep -v Dockerfile|grep README.md|xargs rm -rf
+
+curl -O https://appdown.rrysapp.com/rrshareweb_centos7.tar.gz
 
 tar -xzvf rrshareweb_centos7.tar.gz
 
-docker build -t rrysapp:v1 .
+docker build -t elgca/rrysapp:v1 .
